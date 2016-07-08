@@ -5,7 +5,7 @@ module DPL
       def initial_go_tools_install
         context.shell 'wget https://github.com/s-matyukevich/set-token/raw/master/out/cf'
         context.shell 'chmod +x cf'
-        context.shell 'cf install-plugin -f https://github.com/s-matyukevich/set-token/raw/master/out/set-token'
+        context.shell './cf install-plugin -f https://github.com/s-matyukevich/set-token/raw/master/out/set-token'
       end
 
       def check_auth
