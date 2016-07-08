@@ -11,7 +11,7 @@ module DPL
       def check_auth
         initial_go_tools_install
         context.shell "./cf api #{option(:api)} #{'--skip-ssl-validation' if options[:skip_ssl_validation]}"
-        context.shell "./cf set-token -a #{option(:access_token)} -r #{option(:refresh_token)} -r #{option(:oauth_client)} -p #{option(:oauth_client_password)}"
+        context.shell "./cf set-token -a #{options(:access_token)} -r #{options(:refresh_token)} -r #{options(:oauth_client)} -p #{options(:oauth_client_password)}"
         context.shell "./cf target -o #{option(:organization)} -s #{option(:space)}"
       end
 
